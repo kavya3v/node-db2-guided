@@ -1,4 +1,3 @@
-
 exports.up = async function(knex) {
     //translates to 'CREATE TABLE   "fruits"
  await knex.schema.createTable("fruits",(table)=>{
@@ -8,8 +7,9 @@ exports.up = async function(knex) {
     table.float('avgWeightOz').notNull()
     table.boolean('delicious').defaultTo(true)
  })
-};
+}
+ 
 
 exports.down = async function(knex) {
   await knex.schema.dropTableIfExists("fruits")
-};
+}
